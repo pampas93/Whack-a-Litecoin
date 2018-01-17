@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTC Miner Android.Plugins", "LTC Miner Android.Plugins.csproj", "{91F50EB5-3B11-5FB9-6718-7186DFDCF410}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTC Miner Android", "LTC Miner Android.csproj", "{3F5519CF-5423-662B-2735-0E3F69307F3D}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTC Miner Android.Editor.Plugins", "LTC Miner Android.Editor.Plugins.csproj", "{17E14A2B-3570-3F20-7300-BCA83A60CEDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LTC Miner Android.Editor", "LTC Miner Android.Editor.csproj", "{8EE46FB2-71B2-03E0-F5BD-7ED67040C910}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +19,18 @@ Global
 		{91F50EB5-3B11-5FB9-6718-7186DFDCF410}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91F50EB5-3B11-5FB9-6718-7186DFDCF410}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91F50EB5-3B11-5FB9-6718-7186DFDCF410}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F5519CF-5423-662B-2735-0E3F69307F3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5519CF-5423-662B-2735-0E3F69307F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5519CF-5423-662B-2735-0E3F69307F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5519CF-5423-662B-2735-0E3F69307F3D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{17E14A2B-3570-3F20-7300-BCA83A60CEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{17E14A2B-3570-3F20-7300-BCA83A60CEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17E14A2B-3570-3F20-7300-BCA83A60CEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17E14A2B-3570-3F20-7300-BCA83A60CEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EE46FB2-71B2-03E0-F5BD-7ED67040C910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE46FB2-71B2-03E0-F5BD-7ED67040C910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE46FB2-71B2-03E0-F5BD-7ED67040C910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE46FB2-71B2-03E0-F5BD-7ED67040C910}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
