@@ -11,27 +11,13 @@ public class showCoin : MonoBehaviour {
         anim = gameObject.GetComponent<Animator>();
         //anim.SetTrigger("OnClick");
     }
-    void Update()
+    
+
+    public void makeItActive()
     {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Debug.Log("Clicked");
-        //    anim.SetTrigger("OnClick");
-        //}
-
-        //if (Input.GetMouseButtonDown(1))
-        //{
-        //    Debug.Log("right Clicked");
-        //    anim.SetTrigger("OnRightClick");
-        //}
-
-        //if (Input.GetKeyDown("space"))
-        //    anim.speed = 0;
-    }
-
-    public void makeActive()
-    {
-        anim.SetTrigger("OnClick");
+        this.GetComponent<Animator>().SetTrigger("Show");
+        //Debug.Log(anim);
+        //anim.SetTrigger("OnClickTrigger");
     }
 
 }

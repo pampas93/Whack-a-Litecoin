@@ -9,7 +9,9 @@ public class GameManager : MonoBehaviour {
     public ProgressRadialBehaviour radialScript;
 
     private IEnumerator coroutine;
+    public int ScoreUp = 7;
 
+    [HideInInspector]
     public bool timeUp = false;
 
     private void Awake()
@@ -51,11 +53,15 @@ public class GameManager : MonoBehaviour {
             if (radialScript.Value == 0)
                 timeUp = true;
 
-            radialScript.DecrementValue(2);
+            radialScript.DecrementValue(3);
             yield return new WaitForSeconds(1);
         }
-
         Debug.Log("TimeUp");
+    }
 
+    public void increaseScore()
+    {
+        radialScript.IncrementValue(ScoreUp);
+        //Increase score as well here
     }
 }
