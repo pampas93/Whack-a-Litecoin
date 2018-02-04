@@ -209,6 +209,7 @@
     <Compile Include="Assets\ProgressBar\Script\ProgressBarBehaviour.cs" />
     <Compile Include="Assets\ProgressBar\Script\ProgressRadialBehaviour.cs" />
     <Compile Include="Assets\ProgressBar\Script\Utils.cs" />
+    <Compile Include="Assets\Scripts\CaptureData.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\LTCManager.cs" />
     <Compile Include="Assets\Scripts\OnHit.cs" />

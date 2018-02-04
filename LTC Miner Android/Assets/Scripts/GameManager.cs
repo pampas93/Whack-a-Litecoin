@@ -2,6 +2,7 @@
 using UnityEngine.VR;
 using ProgressBar;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -10,6 +11,11 @@ public class GameManager : MonoBehaviour {
 
     private IEnumerator coroutine;
     public int ScoreUp = 7;
+
+    public Text ScoreText;
+
+    [HideInInspector]
+    public float score = 0.0f;
 
     [HideInInspector]
     public bool timeUp = false;
@@ -24,10 +30,10 @@ public class GameManager : MonoBehaviour {
 
         StartCoroutine(LoadDevice("cardboard"));
         radialScript.IncrementValue(100);
+        ScoreText.text = score + "";
 
         coroutine = timeCoroutine();
         StartCoroutine(coroutine);
-
     }
 
     IEnumerator LoadDevice(string newDevice)
@@ -59,9 +65,26 @@ public class GameManager : MonoBehaviour {
         Debug.Log("TimeUp");
     }
 
+    public void decreaseTimeWithShoot()
+    {
+        radialScript.DecrementValue(2);
+    }
+
     public void increaseScore()
     {
+        if(score == 99.5f)
+        {
+            score = 100.0f;
+            ScoreText.text = "ATH";
+        }
+        else
+        {
+            score = score + 0.5f;
+            ScoreText.text = score + "";
+        }
+        
+
         radialScript.IncrementValue(ScoreUp);
-        //Increase score as well here
+        
     }
 }

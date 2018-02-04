@@ -16,7 +16,6 @@ public class LTCManager : MonoBehaviour {
 
     public GameObject[] litecoins;
 
-    // Use this for initialization
     void Start()
     {
         random = new System.Random();
@@ -26,9 +25,12 @@ public class LTCManager : MonoBehaviour {
         StartCoroutine(coroutine);
     }
 
-    // Update is called once per frame
     void Update () {
 		
+        //if(GameManager.instance.score > 5.0f)
+        //{
+        //    float x = 
+        //}
 	}
 
     IEnumerator LtcCoroutine()

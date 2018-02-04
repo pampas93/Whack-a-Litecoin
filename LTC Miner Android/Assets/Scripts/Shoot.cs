@@ -8,7 +8,6 @@ public class Shoot : MonoBehaviour
     public float bulletSpeed;
     public Transform bulletSpawn;
 
-
     void Update()
     {
         if (!GameManager.instance.timeUp)
@@ -16,10 +15,12 @@ public class Shoot : MonoBehaviour
             //Web
             if (Input.GetMouseButtonDown(0))
             {
+                GameManager.instance.decreaseTimeWithShoot();
 
                 var bt = (GameObject)Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
                 bt.GetComponent<Rigidbody>().velocity = bt.transform.forward * bulletSpeed;
-                Destroy(bt, 4.0f);
+                Destroy(bt, 2.5f);
+
             }
 
             ////Android
@@ -27,6 +28,8 @@ public class Shoot : MonoBehaviour
             //{
             //    if (Input.GetTouch(0).phase == TouchPhase.Began)
             //    {
+            //        GameManager.instance.decreaseTimeWithShoot();
+            //
             //        var bt = (GameObject)Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
             //        bt.GetComponent<Rigidbody>().velocity = bt.transform.forward * bulletSpeed;
 
