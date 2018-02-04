@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class OnHit : MonoBehaviour {
 
@@ -14,6 +12,11 @@ public class OnHit : MonoBehaviour {
         if (collision.collider.gameObject.tag == "Litecoin")
         {
             GameManager.instance.increaseScore();
+        }
+        else if(collision.collider.gameObject.tag == "NextScreen")
+        {
+            GameManager.instance.increaseTimeWithShoot();
+            ScreenManager.instance.NewScreen(collision.collider.gameObject);
         }
         
     }

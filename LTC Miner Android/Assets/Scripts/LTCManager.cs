@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LTCManager : MonoBehaviour {
@@ -27,19 +26,16 @@ public class LTCManager : MonoBehaviour {
 
     void Update () {
 		
-        //if(GameManager.instance.score > 5.0f)
-        //{
-        //    float x = 
-        //}
+        
 	}
 
     IEnumerator LtcCoroutine()
     {
         while (flag)
         {
-            Debug.Log(litecoins.Length);
+            //Debug.Log(litecoins.Length);
             int rno = random.Next(1, litecoins.Length + 1);
-            Debug.Log(rno);
+            //Debug.Log(rno);
 
             GameObject tempObj = litecoins[rno - 1];
             tempObj.GetComponentInChildren<showCoin>().makeItActive();

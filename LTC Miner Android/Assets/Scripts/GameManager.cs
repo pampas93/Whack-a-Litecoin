@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        StartCoroutine(LoadDevice("cardboard"));
+        //StartCoroutine(LoadDevice("cardboard"));
         radialScript.IncrementValue(100);
         ScoreText.text = score + "";
 
@@ -49,7 +49,28 @@ public class GameManager : MonoBehaviour {
 
     void Update () {
 
-        Camera.main.GetComponent<Transform>().localRotation = InputTracking.GetLocalRotation(VRNode.CenterEye);
+        //Camera.main.GetComponent<Transform>().localRotation = InputTracking.GetLocalRotation(VRNode.CenterEye);
+        //Debug.Log(Camera.main.transform.rotation.eulerAngles.y);
+        float y_angle = Camera.main.transform.rotation.eulerAngles.y;
+
+        if((y_angle > 257 && y_angle < 292.54) || (y_angle > 93.5 && y_angle < 128))
+        {
+            //Pause the timer
+            if(coroutine != null)
+            {
+                StopCoroutine(coroutine);
+                coroutine = null;
+            } 
+        }
+        else
+        {
+            if(coroutine == null)
+            {
+                coroutine = timeCoroutine();
+                StartCoroutine(coroutine);
+            }
+        }
+        
     }
 
     IEnumerator timeCoroutine()
@@ -59,7 +80,7 @@ public class GameManager : MonoBehaviour {
             if (radialScript.Value == 0)
                 timeUp = true;
 
-            radialScript.DecrementValue(3);
+            radialScript.DecrementValue(2);
             yield return new WaitForSeconds(1);
         }
         Debug.Log("TimeUp");
@@ -68,6 +89,11 @@ public class GameManager : MonoBehaviour {
     public void decreaseTimeWithShoot()
     {
         radialScript.DecrementValue(2);
+    }
+
+    public void increaseTimeWithShoot()
+    {
+        radialScript.DecrementValue(3);
     }
 
     public void increaseScore()
@@ -82,8 +108,6 @@ public class GameManager : MonoBehaviour {
             score = score + 0.5f;
             ScoreText.text = score + "";
         }
-        
-
         radialScript.IncrementValue(ScoreUp);
         
     }
