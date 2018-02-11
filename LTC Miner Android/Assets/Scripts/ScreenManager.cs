@@ -67,44 +67,50 @@ public class ScreenManager : MonoBehaviour {
             return;
         }
 
-        Debug.Log(count);
         int rno = random.Next(0, count);
 
-        string type = data[rno]["type"];
-        string value = data[rno]["value"];
-
-        if (type.Equals("video") && parent_screen.name == "Screen1")
+        try
         {
-            if (screen1_video)
-                return;
-            else
-            {
-                video_screen1.SetActive(true);
-                screen1_canvas.SetActive(false);
+            string type = data[rno]["type"];
+            string value = data[rno]["value"];
 
-                PlayVideo(value);
+            if (type.Equals("video") && parent_screen.name == "Screen1")
+            {
+                if (screen1_video)
+                    return;
+                else
+                {
+                    video_screen1.SetActive(true);
+                    screen1_canvas.SetActive(false);
+
+                    PlayVideo(value);
+                }
+            }
+            else if (type.Equals("information"))
+            {
+                if (parent_screen.name == "Screen1")
+                {
+                    screen1_video = false;
+                    video_screen1.SetActive(false);
+                    screen1_canvas.SetActive(true);
+
+                    stopVideo();
+
+                    text_Screen1.text = value;
+                }
+                else if (parent_screen.name == "Screen2")
+                {
+                    text_Screen2.text = value;
+                }
             }
         }
-        else if(type.Equals("information"))
+        catch(Exception e)
         {
-            if(parent_screen.name == "Screen1")
-            {
-                screen1_video = false;
-                video_screen1.SetActive(false);
-                screen1_canvas.SetActive(true);
-
-                stopVideo();
-
-                text_Screen1.text = value;
-            }
-            else if(parent_screen.name == "Screen2")
-            {
-                text_Screen2.text = value;
-            }
+            return;
         }
         
-        Debug.Log(parent_screen.name);
-        Debug.Log(data[rno]);
+        //Debug.Log(parent_screen.name);
+        //Debug.Log(data[rno]);
     }
 
     public void PlayVideo(string name)

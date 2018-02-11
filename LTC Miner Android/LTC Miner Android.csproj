@@ -215,6 +215,7 @@
     <Compile Include="Assets\Scripts\ScreenManager.cs" />
     <Compile Include="Assets\Scripts\Shoot.cs" />
     <Compile Include="Assets\Scripts\SimpleJSON.cs" />
+    <Compile Include="Assets\Scripts\SplashScript.cs" />
     <Compile Include="Assets\Scripts\showCoin.cs" />
   </ItemGroup>
   <ItemGroup>

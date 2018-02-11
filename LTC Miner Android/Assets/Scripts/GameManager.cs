@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public bool timeUp = false;
 
+    public Material[] skies;
+
     private void Awake()
     {
         instance = this;
@@ -28,7 +30,12 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        //StartCoroutine(LoadDevice("cardboard"));
+        StartCoroutine(LoadDevice("cardboard"));
+
+        System.Random random = new System.Random();
+        int rno = random.Next(0, skies.Length+1);
+        RenderSettings.skybox = skies[rno];
+
         radialScript.IncrementValue(100);
         ScoreText.text = score + "";
 
@@ -49,7 +56,7 @@ public class GameManager : MonoBehaviour {
 
     void Update () {
 
-        //Camera.main.GetComponent<Transform>().localRotation = InputTracking.GetLocalRotation(VRNode.CenterEye);
+        Camera.main.GetComponent<Transform>().localRotation = InputTracking.GetLocalRotation(VRNode.CenterEye);
         //Debug.Log(Camera.main.transform.rotation.eulerAngles.y);
         float y_angle = Camera.main.transform.rotation.eulerAngles.y;
 
